@@ -29,8 +29,7 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://ai-mock-interviewer-ashen-eta.vercel.app',
-  'https://ai-mock-interviewer-cwwv5dh02-abinayatejas-projects.vercel.app'
+  'https://aimockinterviewer533.netlify.app'
 ];
 
 app.use(cors({
