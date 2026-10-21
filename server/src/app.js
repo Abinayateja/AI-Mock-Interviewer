@@ -47,12 +47,24 @@ app.use(express.json({ limit: '10mb' }));
 // ROUTES
 // ============================================
 
+/* Health check endpoint for uptime monitoring */
+app.get('/api/health', (req, res) => {
+  res.status(200).json({
+    status: 'OK',
+    message: 'AI Mock Interviewer API is running',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Mount all API routes under /api
 // /api/auth      → authentication routes
 // /api/interview → interview routes (start, answer, feedback)
 // /api/resume    → resume upload and parsing routes
 // /api/history   → interview history routes
 app.use('/api', routes);
+
+
+
 
 // ============================================
 // ERROR HANDLING (must be AFTER routes)
